@@ -45,6 +45,8 @@ public class Gluten implements Contract {
             if (!hasUsedWheel) {
                 System.out.println("Gluten runs happily on his wheel :)");
                 hasUsedWheel = true;
+                System.out.println("Gluten decides to take a little nap after excercising...");
+                rest();
             } else {
                 System.out.println("Gluten has already used the wheel!");
             }
@@ -124,4 +126,29 @@ public class Gluten implements Contract {
         System.out.println("Oops! Gluten undoes his last action.");
         // Implement undo functionality if needed
     }
+
+    public static void main(String[] args) {
+        System.out.println("Welcome to the life of Gluten, my pet gerbil!");
+        System.out.println("Get ready to watch a day-in-the-life of my gerbil!");
+    
+        // Create an instance of Gluten
+        Gluten gluten = new Gluten();
+    
+        // Test some actions
+        gluten.grab("an almond");
+        System.out.println(gluten.drop("the almond"));
+        gluten.examine("the hut");
+        gluten.use("wheel");
+        gluten.use("ball");
+        gluten.walk("to the left");
+        gluten.fly(5, 10);
+        System.out.println("Current size: " + gluten.grow());
+        System.out.println("Current size: " + gluten.shrink());
+        gluten.rest();
+        gluten.rest(); // Testing if already resting message appears
+        gluten.undo();
+
+        System.out.println("Goodnight Gluten!");
+    }
+    
 }
